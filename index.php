@@ -10,6 +10,7 @@
 	require_once('./app/SectionController.php');
 	require_once('./app/PublisherController.php');
 	require_once('./app/ArticleController.php');
+	require_once('./app/LoginController.php');
 
 	$Authers = new AutherController();
 	$Languages = new LanguageController();
@@ -17,34 +18,48 @@
 	$Sections = new SectionController();
 	$Publishers = new PublisherController();
 	$Articles = new ArticleController();
-
+	$LoginController = new LoginController();
 
 	$uri = explode('/', $_SERVER['REQUEST_URI']);
-	$route = end($uri);
 
+	if (strpos(end($uri), '?') !== false) 
+	{
+		
+		$route = explode("?", end($uri))[0];
+	}else{
+
+		$route = end($uri);
+	}
+	
+	
 	switch ($route) {
+
+		case 'login':
+			$LoginController->get_login_infp($_POST);
+			break;
+
 		case 'getActiveAuthers':
-			$Authers->get_authers($_REQUEST);
+			$Authers->get_authers();
 			break;
 
 		case 'getActivePublishers':
-			$Publishers->get_publishers($_REQUEST);
+			$Publishers->get_publishers();
 			break;
 
 		case 'getActiveLanguages':
-			$Languages->get_languages($_REQUEST);
+			$Languages->get_languages();
 			break;
 
 		case 'getActiveLocations':
-			$Locations->get_locations($_REQUEST);
+			$Locations->get_locations();
 			break;
 
 		case 'getActiveSections':
-			$Sections->get_sections($_REQUEST);
+			$Sections->get_sections();
 			break;
 
 		case 'getActiveArticles':
-			$Articles->get_articles($_REQUEST);
+			$Articles->get_articles();
 			break;
 		
 		default:

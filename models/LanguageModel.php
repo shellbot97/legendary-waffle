@@ -25,7 +25,7 @@
 				if (next($filters)) 
 				{
 					
-					$query = " and ";	
+					$query .= " and ";	
 				}
 			}
 			$query .= ";"; 

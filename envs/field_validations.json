@@ -1,0 +1,14 @@
+{
+
+
+	"login":{
+		"username":{
+			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
+			"is_required": true
+		},
+		"password":{
+			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
+			"is_required": true
+		}
+	}
+}

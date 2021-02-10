@@ -9,6 +9,8 @@ CREATE TABLE `articles` (
   `auther_id` int NOT NULL,
   `publisher_id` int NOT NULL,
   `section_id` int NOT NULL,
+  `content` blob NOT NULL,
+  `keywords` text NULL,
   `is_active` int(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,

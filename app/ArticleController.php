@@ -10,19 +10,25 @@
 		{
 
 			parent::__construct();
-			$this->article_model = new ArticlerModel();
+			$this->article_model = new ArticleModel();
 		}
 		
-		public function get_article($params=array())
+		public function get_articles($params=array())
 		{
 
 			$data = array();
-			$data = $this->rticle_model->get_active_article(
+			$data = $this->article_model->get_all_data(
 				array(
-					"is_active" => 1
+					"a.is_active" => 1
 				)
 			);
 			echo $this->response_helper->give_success_response_by_array($data);
+		}
+
+		public function get_article($params=array())
+		{
+
+			
 		}
 	}
 
