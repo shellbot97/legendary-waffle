@@ -1,5 +1,5 @@
-Sr. Number, Name
-1, Sports
-2, Fashion
-3, Tech
-4, Finance
+section_name,remarks
+Sports,Articvles under sports section
+Fashion, Articles under fashion
+Tech,Articles under Tech
+Finance,Articles under Finance

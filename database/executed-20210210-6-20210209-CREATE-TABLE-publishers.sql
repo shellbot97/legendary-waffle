@@ -5,7 +5,7 @@ CREATE TABLE `publishers` (
   `media_id` int NOT NULL,
   `is_active` int NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `remarks` varchar(50) NOT NULL,
+  `remarks` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`publisher_id`),
   KEY `media_id` (`media_id`),
   CONSTRAINT `publishers_ibfk_1` FOREIGN KEY (`media_id`) REFERENCES `media` (`media_id`)

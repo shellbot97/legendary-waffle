@@ -1,21 +1,20 @@
 <?php 
-
 	require_once "ParentFeeder.php";
 
-	class Languages extends ParentFeeder
+	class Authers extends ParentFeeder
 	{
 		
 		function __construct()
 		{
-
+			
 			parent::__construct();
-			$this->resource_file = __DIR__."/resources/languages.csv";
-			$this->table_name = "languages";
+			$this->resource_file = __DIR__."/resources/authers.csv";
+			$this->table_name = "authers";
 		}
 
 		public function insert_data()
 		{
-
+			
 			$csv_data = $this->get_data_in_csv($this->resource_file);
 			
 			foreach ($csv_data as $csv_data_value) 
@@ -46,7 +45,7 @@
 		public function get_data()
 		{
 
-			$query = "Select language_id, language_abbreviation from languages where is_active = 1;";
+			$query = "Select auther_id, auther_name from authers where is_active = 1;";
 			$data = array();
 			$result = mysqli_query($this->database_connection , $query);
 
@@ -62,9 +61,7 @@
 		
 			return $data;
 		}
-
 	}
-
 
 
 ?>

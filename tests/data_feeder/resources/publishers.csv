@@ -1,5 +1,5 @@
-Sr. Number, Name, URL, Logo
-1, Penguin Random House, https://www.penguinrandomhouse.com/, https://blog-cdn.reedsy.com/uploads/2019/01/PRh-e1547571566754.jpg
-2, Hachette Livre, https://www.hachette.com/en/homepage/, https://blog-cdn.reedsy.com/uploads/2019/01/Hachette-300x158.jpg
-3, HarperCollins, https://www.harpercollins.com/, https://blog-cdn.reedsy.com/uploads/2019/01/harpercollins.jpg
-4, Macmillan Publishers, http://macmillan.com/, https://blog-cdn.reedsy.com/uploads/2019/01/mcmallin-300x82.jpg
+publisher_name,url,media
+Penguin Random House,https://www.penguinrandomhouse.com/,"'{""url"":""https://blog-cdn.reedsy.com/uploads/2019/01/Prh-e1547571566754.jpg"", ""type"":""image"", ""extra_params"":{""height"":100, ""width"":100}}'"
+Hachette Livre,https://www.hachette.com/en/homepage/,"'{""url"":""https://blog-cdn.reedsy.com/uploads/2019/01/Hachette-300x158.jpg"", ""type"":""image"", ""extra_params"":{""height"":100, ""width"":100}}'"
+HarperCollins,https://www.harpercollins.com/,"'{""url"":""https://blog-cdn.reedsy.com/uploads/2019/01/harpercollins.jpg"", ""type"":""image"", ""extra_params"":{""height"":100, ""width"":100}}'"
+Macmillan Publishers,http://macmillan.com/,"'{""url"":""https://blog-cdn.reedsy.com/uploads/2019/01/mcmallin-300x82.jpg"", ""type"":""image"", ""extra_params"":{""height"":100, ""width"":100}}'"
