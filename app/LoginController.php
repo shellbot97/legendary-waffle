@@ -19,7 +19,7 @@
 		
 		public function get_login_infp($params=array())
 		{
-
+			
 			$invalid_fields = $this->validator->validate_fields('login', $params);
 			$final_result = array(
 				"session_token" => "",
@@ -60,7 +60,7 @@
 			}else
 			{
 
-				echo echo_validation_errors($invalid_fields);
+				echo $this->response_helper->echo_validation_errors($invalid_fields);
 				exit();
 			}
 

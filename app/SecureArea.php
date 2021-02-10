@@ -19,27 +19,35 @@
         	$this->response_helper = new ResponseHelper();
         	$this->validator = new Validator();
         	$this->auth_model = new AuthModel();
-        	$header = apache_request_headers();
+        	$this->header = apache_request_headers();
 
-        	if (empty($this->header['Auth'])) 
+        	$this->autherize_access();
+
+		}
+
+
+		public function autherize_access()
+		{
+
+			if (empty($this->header['Auth'])) 
         	{
         	
         		echo $this->response_helper->give_responce_401("Unautherised access");
         		exit();
         	}
 
-        	$token = $this->auth_model->get_active_session_by_session_id($header['Auth']);
+        	$token = $this->auth_model->get_active_session_by_session_id($this->header['Auth']);
         	if (empty($token)) 
         	{
         	
         		echo $this->response_helper->give_responce_401("Unautherised access");
         		exit();
         	}
-
 		}
 
-
-		public function exceptions_error_handler($severity, $message, $filename, $lineno) {
+		public function exceptions_error_handler($severity, $message, $filename, $lineno) 
+		{
+			
 			if (error_reporting() == 0) {
 				return;
 			}
