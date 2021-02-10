@@ -5,18 +5,18 @@
 	error_reporting(E_ALL);
 
 	require_once('./app/AutherController.php');
-	// require_once('./app/LanguageController.php');
-	// require_once('./app/LocationController.php');
-	// require_once('./app/SectionController.php');
-	// require_once('./app/PublisherController.php');
-	// require_once('./app/ArticleController.php');
+	require_once('./app/LanguageController.php');
+	require_once('./app/LocationController.php');
+	require_once('./app/SectionController.php');
+	require_once('./app/PublisherController.php');
+	require_once('./app/ArticleController.php');
 
 	$Authers = new AutherController();
-	// $Languages = new LanguageController();
-	// $Locations = new LocationController();
-	// $Sections = new SectionController();
-	// $Publishers = new PublisherController();
-	// $Articles = new ArticleController();
+	$Languages = new LanguageController();
+	$Locations = new LocationController();
+	$Sections = new SectionController();
+	$Publishers = new PublisherController();
+	$Articles = new ArticleController();
 
 
 	$uri = explode('/', $_SERVER['REQUEST_URI']);
@@ -28,23 +28,23 @@
 			break;
 
 		case 'getActivePublishers':
-			# code...
+			$Publishers->get_publishers($_REQUEST);
 			break;
 
 		case 'getActiveLanguages':
-			# code...
+			$Languages->get_languages($_REQUEST);
 			break;
 
 		case 'getActiveLocations':
-			# code...
+			$Locations->get_locations($_REQUEST);
 			break;
 
 		case 'getActiveSections':
-			# code...
+			$Sections->get_sections($_REQUEST);
 			break;
 
 		case 'getActiveArticles':
-			# code...
+			$Articles->get_articles($_REQUEST);
 			break;
 		
 		default:

@@ -1,7 +1,7 @@
 CREATE TABLE `articles` (
   `article_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `media_id` int NOT NULL,
-  `url` varchar(50) NOT NULL,
+  `url` varchar(1000) NOT NULL,
   `headline` varchar(255) NOT NULL,
   `published_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `language_id` int NOT NULL,
