@@ -48,7 +48,11 @@
 				break;
 
 			case 'updateArticle':
-				$Articles->create_article($_POST);
+				$Articles->update_article($_REQUEST);
+				break;
+
+			case 'deleteArticle':
+				$Articles->delete_article($_REQUEST);
 				break;
 
 			case 'getActiveAuthers':

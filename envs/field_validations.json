@@ -88,6 +88,53 @@
 			"rules": "L15bYS16QS1aLXxdK1thLXpBLVowLTldKyQv",
 			"is_required": true
 		}
-
+	},
+	"updateArticle":{
+		"article_image_url":{
+			"rules": "L15bYS16QS1aMC05XzouXC9dKyQv",
+			"is_required": false
+		},
+		"headline":{
+			"rules": "L15bYS16QS1aLSBdK1thLXpBLVowLTldKyQv",
+			"is_required": false
+		},
+		"article_url":{
+			"rules": "L15bYS16QS1aMC05XzouXC9dKyQv",
+			"is_required": false
+		},
+		"publish_date":{
+			"rules": "L15bMC05XXs0fS0oMFsxLTldfDFbMC0yXSktKDBbMS05XXxbMS0yXVswLTldfDNbMC0xXSkgKFswLTldWzAtOV06WzAtOV1bMC05XTpbMC05XVswLTldKSQv",
+			"is_required": false
+		},
+		"language_id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": false
+		},
+		"location_id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": false
+		},
+		"auther_id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": false
+		},
+		"publisher_id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": false
+		},
+		"content":{
+			"rules": "",
+			"is_required": false
+		},
+		"keywords":{
+			"rules": "L15bYS16QS1aLXxdK1thLXpBLVowLTldKyQv",
+			"is_required": false
+		}
+	},
+	"deleteArticle":{
+		"id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": true
+		}
 	}
 }

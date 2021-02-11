@@ -83,7 +83,7 @@
 		public function get_all_data_by_article_id($article_id="")
 		{
 
-			$query = "select a.article_id, a.url, a.headline, m.source as image, a.published_at, a.created_at, a.updated_at, lang.language_abbreviation, loc.location_abbreviation, aut.auther_name, aut.url as auther_url, p.publisher_name, mp.extra_params as publisher_media_params, mp.source as publisher_media_url, s.section_name, a.content, a.keywords ";
+			$query = "select a.article_id, a.url, a.headline, m.source as image, a.published_at, a.created_at, a.updated_at, lang.language_abbreviation, loc.location_abbreviation, aut.auther_name, aut.url as auther_url, p.url as publisher_url, p.publisher_name, mp.extra_params as publisher_media_params, mp.source as publisher_media_url, s.section_name, a.content, a.keywords ";
 			$query .= " from articles a ";
 			$query .= " left join media m on m.media_id = a.media_id ";
 			$query .= " left join languages lang on lang.language_id = a.language_id ";
@@ -188,6 +188,24 @@
 			$stmt= $this->pdo->prepare($sql)->execute($insert_array);
 			$id = $this->pdo->lastInsertId();
 			return $id;
+		}
+
+		public function update_article_by_article_id($update_array=array(), $article_id="")
+		{
+
+			$query = "UPDATE articles set ";
+			foreach ($update_array as $column_name => $column_value) 
+			{
+			
+				$query .= " $column_name = :$column_name ";
+				if (next($update_array)) {
+					$query .= ", ";
+				}
+			}
+			$query .= " where article_id= $article_id; ";
+
+			$stmt= $this->pdo->prepare($query)->execute($update_array);
+			return $stmt;
 		}
 	}
 
