@@ -48,6 +48,17 @@
 				return json_encode(array("status" => "Failed", "status_code" => 401, "payload" => "Unautherized"), JSON_PRETTY_PRINT);
 			}
 		}
+
+
+		function give_responce_by_string($string_message = '')
+		{
+			if ($string_message != "") {
+				return json_encode(array("status" => "Success", "status_code" => 200, "payload" => $string_message), JSON_PRETTY_PRINT);
+			}else{
+				http_response_code(204);
+				return json_encode(array("status" => "Success", "status_code" => 204, "payload" => "No Content"), JSON_PRETTY_PRINT);
+			}
+		}  
 	}
 
 

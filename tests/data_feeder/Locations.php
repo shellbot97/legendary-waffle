@@ -45,7 +45,7 @@
 		public function get_data()
 		{
 
-			$query = "Select city, location_abbreviation from locations where is_active = 1;";
+			$query = "Select location_id, city, location_abbreviation from locations where is_active = 1;";
 			$data = array();
 			$result = mysqli_query($this->database_connection , $query);
 

@@ -150,7 +150,7 @@
 					$article_id = $this->article_model->insert_article($article_data);
 
 					
-					echo $this->response_helper->give_success_responce_boolean($article_id);
+					echo $this->response_helper->give_responce_by_string($article_id);
 					exit();
 					
 				}catch(Exception $ex)

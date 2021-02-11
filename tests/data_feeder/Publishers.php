@@ -56,7 +56,7 @@
 		public function get_data()
 		{
 
-			$query = "Select publisher_id, publisher_id from publishers where is_active = 1;";
+			$query = "Select publisher_id, publisher_name from publishers where is_active = 1;";
 			$data = array();
 			$result = mysqli_query($this->database_connection , $query);
 
