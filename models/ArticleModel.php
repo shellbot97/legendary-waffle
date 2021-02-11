@@ -36,10 +36,10 @@
 				$query .= "(";
 				foreach ($db_filter as $db_filter_key => $db_filter_value) 
 				{
-				
+
 					if (is_array($db_filter_value)) 
 					{
-					
+
 						$query .= "(";
 						foreach ($db_filter_value as $multi_filter_value) 
 						{
@@ -73,7 +73,7 @@
 			}
 
 			$query .= ";";
-			
+
 			$statement = $this->pdo->prepare($query);
 			$statement->execute();
 			$data = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -105,6 +105,8 @@
 
 		private function filter_column_mapper($filter='', $value)
 		{
+
+			$filter_array = array();
 
 			switch ($filter) {
 				case 'id':
@@ -144,9 +146,13 @@
 					break;
 
 				case 'keywords':
-					foreach (explode("|", $value) as $keyword_value) 
+					if (strpos($value, "|") !== false) 
 					{
-						$filter_array['a.keywords'][] = $keyword_value;
+					
+						foreach (explode("|", $value) as $keyword_value) 
+						{
+							$filter_array['a.keywords'][] = $keyword_value;
+						}
 					}
 					break;
 
@@ -154,15 +160,13 @@
 					$filter_array = array("s.section_name" => $value);
 					break;
 
-				case 'generic':
-					$filter_array = array(
-						"lang.language_abbreviation" => $value,
-						"loc.location_abbreviation" => $value,
-						"aut.auther_name" => $value,
-						"p.publisher_name" => $value,
-						"a.headline" => $value,
-					);
-					break;
+				// case 'generic':
+				// 	$filter_array["lang.language_abbreviation"][] = $value;
+				// 	$filter_array["loc.location_abbreviation"][] = $value;
+				// 	$filter_array["aut.auther_name"][] = $value;
+				// 	$filter_array["p.publisher_name"][] = $value;
+				// 	$filter_array["a.headline"][] = $value;
+				// 	break;
 				
 				default:
 					$filter_array = array("" => "");
@@ -204,8 +208,10 @@
 			}
 			$query .= " where article_id= $article_id; ";
 
-			$stmt= $this->pdo->prepare($query)->execute($update_array);
-			return $stmt;
+			$stmt= $this->pdo->prepare($query);
+			$stmt->execute($update_array);
+			
+			return $stmt->rowCount();
 		}
 	}
 

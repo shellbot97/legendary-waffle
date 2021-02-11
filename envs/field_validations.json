@@ -20,31 +20,31 @@
 	"searchArticles":{
 		"language":{
 			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
-			"is_required": true
+			"is_required": false
 		},
 		"location":{
-			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"rules": "L15bYS16QS1aXCwgXStbYS16QS1aMC05XSskLw==",
+			"is_required": false
 		},
 		"auther":{
-			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"rules": "L15bYS16QS1aLiBdK1thLXpBLVowLTldKyQv",
+			"is_required": false
 		},
 		"publisher":{
-			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"rules": "L15bYS16QS1aIF0rW2EtekEtWjAtOV0rJC8=",
+			"is_required": false
 		},
 		"headline":{
 			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"is_required": false
 		},
 		"section":{
 			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"is_required": false
 		},
 		"generic":{
 			"rules": "L15bYS16QS1aXStbYS16QS1aMC05XSskLw==",
-			"is_required": true
+			"is_required": false
 		}
 	},
 	"createArticle":{
@@ -73,6 +73,10 @@
 			"is_required": true
 		},
 		"auther_id":{
+			"rules": "L15bMC05XSskLw==",
+			"is_required": true
+		},
+		"section_id":{
 			"rules": "L15bMC05XSskLw==",
 			"is_required": true
 		},

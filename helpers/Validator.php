@@ -32,7 +32,7 @@
 
 							if(!preg_match($rules, $param[$validation_param_key]))
 							{
-								
+
 								$error_set[] = $validation_param_key." needs to be in format.";
 							}	
 						}

@@ -22,43 +22,49 @@
 				try
 				{
 
+					$formatted_data = array();
 					$data = $this->article_model->get_all_data_by_article_id(
 						$params['id']
 					);
 
-					$formatted_data = array(
+					if (!empty($data)) 
+					{
 
-						"image" => $data["image"],
-					    "url" => $data["url"],
-					    "headline" => $data["headline"],
-					    "dateCreated" => str_replace(" ", "T", $data["created_at"]),
-					    "datePublished" => str_replace(" ", "T", $data["published_at"]),
-					    "dateModified" => str_replace(" ", "T", $data["updated_at"]),
-					    "inLanguage" => $data["language_abbreviation"],
-					    "contentLocation" => array(
-					            "name" => $data["location_abbreviation"],
-					        ),
+						$formatted_data = array(
 
-					    "author" => array(
-					            "name" => $data["auther_name"],
-					            "url" => $data["auther_url"],
-					        ),
+							"image" => $data["image"],
+						    "url" => $data["url"],
+						    "headline" => $data["headline"],
+						    "dateCreated" => str_replace(" ", "T", $data["created_at"]),
+						    "datePublished" => str_replace(" ", "T", $data["published_at"]),
+						    "dateModified" => str_replace(" ", "T", $data["updated_at"]),
+						    "inLanguage" => $data["language_abbreviation"],
+						    "contentLocation" => array(
+						            "name" => $data["location_abbreviation"],
+						        ),
 
-					    "publisher" => array
-					        (
-					            "name" => $data["publisher_name"],
-					            "url" => $data["publisher_url"],
-					            "logo" => array(
-					                    "url" => $data["publisher_name"],
-					                    "width" => json_decode($data["publisher_media_params"], true)['width'],
-					                    "height" => json_decode($data["publisher_media_params"], true)['height'],
-					                )
-					        ),
-					    "keywords" => explode("|", $data['keywords']),
+						    "author" => array(
+						            "name" => $data["auther_name"],
+						            "url" => $data["auther_url"],
+						        ),
 
-					    "articleSection" => $data["section_name"],
-					    "articleBody" => $data["content"],
-					);
+						    "publisher" => array
+						        (
+						            "name" => $data["publisher_name"],
+						            "url" => $data["publisher_url"],
+						            "logo" => array(
+						                    "url" => $data["publisher_name"],
+						                    "width" => json_decode($data["publisher_media_params"], true)['width'],
+						                    "height" => json_decode($data["publisher_media_params"], true)['height'],
+						                )
+						        ),
+						    "keywords" => explode("|", $data['keywords']),
+
+						    "articleSection" => $data["section_name"],
+						    "articleBody" => $data["content"],
+						);
+					}
+
 
 					echo $this->response_helper->give_success_response_by_array($formatted_data);
 
@@ -210,7 +216,7 @@
 
 					$article_id = $this->article_model->update_article_by_article_id($article_data, $params['id']);
 
-					
+
 					echo $this->response_helper->give_success_responce_boolean($article_id);
 					exit();
 					
