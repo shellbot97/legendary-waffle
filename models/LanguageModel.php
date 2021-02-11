@@ -15,7 +15,7 @@
 		public function get_active_languages($filters=array())
 		{
 
-			$query = "select language_name, language_abbreviation ";
+			$query = "select language_id, language_name, language_abbreviation ";
 			$query .= "from $this->table_name ";
 			$query .= "where ";
 			foreach ($filters as $column_name => $column_value) 

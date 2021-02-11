@@ -15,7 +15,7 @@
 		public function get_active_locations($filters=array())
 		{
 
-			$query = "select city, location_abbreviation ";
+			$query = "select location_id, city, location_abbreviation ";
 			$query .= "from $this->table_name ";
 			$query .= "where ";
 			foreach ($filters as $column_name => $column_value) 

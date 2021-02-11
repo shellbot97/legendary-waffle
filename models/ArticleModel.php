@@ -171,6 +171,24 @@
 
 			return $filter_array;
 		}
+
+		public function insert_media($insert_array=array())
+		{
+
+			$sql = "INSERT INTO media (source, extra_params, media_type) VALUES (:source, :extra_params, :media_type)";
+			$stmt= $this->pdo->prepare($sql)->execute($insert_array);
+			$id = $this->pdo->lastInsertId();
+			return $id;
+		}
+
+		public function insert_article($insert_array=array())
+		{
+
+			$sql = "INSERT INTO articles (media_id, url, headline, published_at, language_id, location_id, auther_id, publisher_id, section_id, content, keywords, created_by) VALUES (:media_id, :url, :headline, :published_at, :language_id, :location_id, :auther_id, :publisher_id, :section_id, :content, :keywords, :created_by)";
+			$stmt= $this->pdo->prepare($sql)->execute($insert_array);
+			$id = $this->pdo->lastInsertId();
+			return $id;
+		}
 	}
 
 

@@ -49,43 +49,43 @@
 	},
 	"createArticle":{
 		"article_image_url":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bYS16QS1aMC05XzouXC9dKyQv",
 			"is_required": true
 		},
 		"headline":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bYS16QS1aLSBdK1thLXpBLVowLTldKyQv",
 			"is_required": true
 		},
 		"article_url":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bYS16QS1aMC05XzouXC9dKyQv",
 			"is_required": true
 		},
 		"publish_date":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bMC05XXs0fS0oMFsxLTldfDFbMC0yXSktKDBbMS05XXxbMS0yXVswLTldfDNbMC0xXSkgKFswLTldWzAtOV06WzAtOV1bMC05XTpbMC05XVswLTldKSQv",
 			"is_required": true
 		},
 		"language_id":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bMC05XSskLw==",
 			"is_required": true
 		},
 		"location_id":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bMC05XSskLw==",
 			"is_required": true
 		},
 		"auther_id":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bMC05XSskLw==",
 			"is_required": true
 		},
 		"publisher_id":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bMC05XSskLw==",
 			"is_required": true
 		},
 		"content":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "",
 			"is_required": true
 		},
 		"keywords":{
-			"rules": "L15bYS16QS1aLV0rW2EtekEtWjAtOV0rJC8=",
+			"rules": "L15bYS16QS1aLXxdK1thLXpBLVowLTldKyQv",
 			"is_required": true
 		}
 

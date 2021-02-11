@@ -9,6 +9,7 @@
 		
 		protected $response_helper;
 		protected $validator;
+		protected $session_variable;
 		private $header;
 
 		function __construct()
@@ -42,6 +43,10 @@
         	
         		echo $this->response_helper->give_responce_401("Unautherised access");
         		exit();
+        	}else{
+
+        		$data = json_decode($token[0]['data'], true);
+        		$this->session_variable = $data;
         	}
 		}
 

@@ -17,10 +17,8 @@
 		{
 
 			$data = array();
-			$data = $this->publisher_model->get_active_publishers(
-				array(
-					"is_active" => 1
-				)
+			$data = $this->publisher_model->get_active_publishers_with_media(
+				array()
 			);
 			echo $this->response_helper->give_success_response_by_array($data);
 		}

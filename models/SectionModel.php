@@ -14,7 +14,7 @@
 		public function get_active_sections($filters=array())
 		{
 			
-			$query = "select section_name ";
+			$query = "select section_id, section_name ";
 			$query .= "from $this->table_name ";
 			$query .= "where ";
 			foreach ($filters as $column_name => $column_value) 

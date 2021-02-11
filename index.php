@@ -47,6 +47,10 @@
 				$Articles->create_article($_POST);
 				break;
 
+			case 'updateArticle':
+				$Articles->create_article($_POST);
+				break;
+
 			case 'getActiveAuthers':
 				$Authers->get_authers();
 				break;

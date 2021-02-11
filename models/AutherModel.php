@@ -15,7 +15,7 @@
 		public function get_active_authers($filters=array())
 		{
 
-			$query = "select auther_name, url ";
+			$query = "select auther_id, auther_name, url ";
 			$query .= "from $this->table_name ";
 			$query .= "where ";
 			foreach ($filters as $column_name => $column_value) 

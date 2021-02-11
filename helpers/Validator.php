@@ -14,26 +14,39 @@
 
 			$error_set = array();
 
-			if(!empty($this->validations[$api_name]))
+
+
+			foreach ($this->validations[$api_name] as $validation_param_key => $validation_param_value) 
 			{
 
-				foreach ($param as $param_key => $param_value) 
+				if (!empty($param[$validation_param_key])) 
 				{
-					
-					if (!empty($this->validations[$api_name][$param_key])) 
-					{
-						
-						$rules = base64_decode($this->validations[$api_name][$param_key]['rules']);
 
-						if(!preg_match($rules, $param_value))
+					if (!empty($validation_param_value)) 
+					{
+
+						$rules = base64_decode($validation_param_value['rules']);
+
+						if (!empty($rules)) 
 						{
-							
-							$error_set[] = $param_key." needs to be in format.";
+
+							if(!preg_match($rules, $param[$validation_param_key]))
+							{
+								
+								$error_set[] = $validation_param_key." needs to be in format.";
+							}	
 						}
 					}
-					
-				}	
-			}
+
+				}else{
+
+					if ($validation_param_value['is_required']) 
+					{
+						
+						$error_set[] = $validation_param_key." is required.";
+					}
+				}
+			}	
 
 			return $error_set;
 		}

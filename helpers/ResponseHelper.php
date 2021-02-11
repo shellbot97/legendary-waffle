@@ -22,6 +22,15 @@
 		}
 
 
+		function give_success_responce_boolean($value='')
+		{
+		    if ($value) {
+		        return json_encode(array("status" => "Success", "status_code" => 200, "payload" => "Successful"), JSON_PRETTY_PRINT);
+		    }else{  	
+		        return json_encode(array("status" => "Failed", "status_code" => 200, "payload" => "No change"), JSON_PRETTY_PRINT);
+		    }
+		}
+
 		function echo_validation_errors($value='')
 		{
 			http_response_code(422);
