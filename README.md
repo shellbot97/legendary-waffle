@@ -53,7 +53,7 @@ Articles api requires [PHP](https://www.php.net/docs.php) v5+ to run.
 Clone the folder in hosted directory and start the server.
 
 ```sh
-$ cd media[dot]net
+$ cd companyM
 $ cd database
 $ php Migrations.php
 $ cd ../tests/
