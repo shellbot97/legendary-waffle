@@ -57,12 +57,12 @@ $ cd companyM
 $ cd database
 $ php Migrations.php
 $ cd ../tests/
-$ cd php main_insertion.php
+$ php main_insertion.php
 ```
 
 Once done, start with testing of articles module
 ```sh
-$ cd php articles_test.php
+$ php articles_test.php
 
 Logging in...
 Array
